@@ -78,7 +78,7 @@ var Observer = new MutationObserver((mutationrecords) => {
         staffNumbers[day] = []
 
         // Set the day label
-        staffNumbers[day][0] = dayOfWeek[day];
+        staffNumbers[day][0] = dayOfWeek[day-1];
 
         // Loop through each hour and click on the hourly cell, recording staff data
         for (let hour = 0; hour < 24; hour++) {
@@ -91,7 +91,7 @@ var Observer = new MutationObserver((mutationrecords) => {
         day++;
 
         // If all days of the week have been processed, generate CSV and trigger download
-        if (day === 7) {
+        if (day === 8) {
             console.log(staffNumbers)
             var csv = staffNumbers
                 .map((item) => {
